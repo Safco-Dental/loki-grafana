@@ -15,9 +15,11 @@ services:
     volumes:
       - /var/log:/var/log
       - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/orders-microservice
-      - /home/mario/jenkins/workspace/customers-microservice/logs:/var/log/customers-microservice
+      - /home/mario/jenkins/workspace/customer-microservice/logs:/var/log/customers-microservice
       - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/payment-microservice
       - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/cronjobs-microservice
+      - /home/mario/repos/ts-consumer-magento-cart-migration/logs:/var/log/ts-consumer-magento-cart-migration
+
 
       - ./promtail.yaml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml

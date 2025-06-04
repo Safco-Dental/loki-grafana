@@ -48,3 +48,14 @@ scrape_configs:
         labels:
           job: cronjobs
           __path__: /var/log/cronjobs-microservice/*.log
+
+  - job_name: ts-consumer-magento-cart-migration
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: ts-consumer-magento-cart-migration
+          __path__: /var/log/ts-consumer-magento-cart-migration/*.log
+
+
+
