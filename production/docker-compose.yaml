@@ -19,7 +19,7 @@ services:
       - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/payment-microservice
       - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/cronjobs-microservice
       - /home/mario/repos/ts-consumer-magento-cart-migration/logs:/var/log/ts-consumer-magento-cart-migration
-      - ${WORKSPACE}/production/promtail.yaml:/etc/promtail/config.yml
+      - /var/jenkins_home/workspace/grafana-loki/production/promtail.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
     networks:
       - loki
