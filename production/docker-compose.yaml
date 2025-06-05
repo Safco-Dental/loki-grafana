@@ -14,11 +14,11 @@ services:
     image: grafana/promtail:latest
     volumes:
       - /var/log:/var/log
-      - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/orders-microservice
-      - /home/mario/jenkins/workspace/customer-microservice/logs:/var/log/customers-microservice
-      - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/payment-microservice
-      - /home/mario/jenkins/workspace/orders-microservice/logs:/var/log/cronjobs-microservice
-      - /home/mario/repos/ts-consumer-magento-cart-migration/logs:/var/log/ts-consumer-magento-cart-migration
+      - /volumes/logs/orders-microservice:/var/log/orders-microservice
+      - /volumes/logs/customers-microservice:/var/log/customers-microservice
+      - /volumes/logs/payment-microservice:/var/log/payment-microservice
+      - /volumes/logs/cronjobs-magento-sync:/var/log/cronjobs-microservice
+      - /home/mario/repos/ts-consumer-magento-cart-migration:/var/log/ts-consumer-magento-cart-migration
       - /var/jenkins_home/workspace/grafana-loki/production/promtail.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
     networks:

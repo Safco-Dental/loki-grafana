@@ -56,6 +56,3 @@ scrape_configs:
         labels:
           job: ts-consumer-magento-cart-migration
           __path__: /var/log/ts-consumer-magento-cart-migration/*.log
-
-
-
